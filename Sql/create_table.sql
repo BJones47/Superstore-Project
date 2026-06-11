@@ -1,3 +1,4 @@
+-- Create the superstore table with appropriate data types
 CREATE TABLE superstore (
     row_id INT,
     order_id VARCHAR(20),
