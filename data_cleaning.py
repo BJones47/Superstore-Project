@@ -1,5 +1,6 @@
 import pandas as pd
 import numpy as np
+from pathlib import Path
 
 # read in the dataset
 df = pd.read_csv('Sample - Superstore.csv', encoding='latin-1')
@@ -61,4 +62,6 @@ print("\nNEGATIVE PROFITS:")
 print("Count:", len(negative_profits))
 print(negative_profits.head())
 
-df.to_csv('cleaned_superstore.csv', index=False)
+output_path = Path('data') / 'cleaned_superstore.csv'
+output_path.parent.mkdir(parents=True, exist_ok=True)
+df.to_csv(output_path, index=False)
